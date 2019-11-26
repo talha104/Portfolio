@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<section id='first'>
+	<div class="container">
+		<h1>
+			Look Around The Portfolio And Discover Some Amazing Things!
+		</h1>
+	</div>
+</section>
+
+<section id='portfolio'>
+	<div class="container">
+		<h1>
+			Portfolio
+		</h1>
+
+		<div class='all'>
+			<div class='card'>
+				<div class='face face1'>
+					<div class="content">
+						<p>
+							Words, sentences, paragraphs. This book, for example, consists of text. Text processing refers to the ability to manipulate words, lines, and pages. Typically, the term text refers to text stored as ASCII codes (that is, without any formatting). Objects that are not text include graphics, numbers (if they're not stored as ASCII characters), and program code.
+						</p>
+					</div>
+				</div>
+				<div class='face face2'>
+					<h2>01</h2>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='face face1'>
+					<div class="content">
+						<p>
+							Words, sentences, paragraphs. This book, for example, consists of text. Text processing refers to the ability to manipulate words, lines, and pages. Typically, the term text refers to text stored as ASCII codes (that is, without any formatting). Objects that are not text include graphics, numbers (if they're not stored as ASCII characters), and program code.
+						</p>
+					</div>
+				</div>
+				<div class='face face2'>
+					<h2>02</h2>
+				</div>
+			</div>
+
+			<div class='card'>
+				<div class='face face1'>
+					<div class="content">
+						<p>
+							Words, sentences, paragraphs. This book, for example, consists of text. Text processing refers to the ability to manipulate words, lines, and pages. Typically, the term text refers to text stored as ASCII codes (that is, without any formatting). Objects that are not text include graphics, numbers (if they're not stored as ASCII characters), and program code.
+						</p>
+					</div>
+				</div>
+				<div class='face face2'>
+					<h2>03</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='about'>
+	<div class="container">
+		<h1>
+			About Me
+		</h1>
+
+		<figure>
+			<img src="/static/images/profile.jpg">
+			<blockquote>
+				TALHA MIRZA
+			</blockquote>
+			<figcaption>Professional Web Developer</figcaption>
+		</figure>
+	</div>
+</section>
+
+<section id='contact'>
+	<div class="container">
+		<h1>
+			Credible. Professional. Quality.
+		</h1>
+
+		<form method="POST">
+			{% csrf_token %}
+
+		    {{ form|crispy }}
+
+			<input type="submit" value='Send' class="cta">
+		</form>
+	</div>
+</section>
+{% endblock %}

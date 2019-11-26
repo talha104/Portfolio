@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	{% block head %}
+	{% endblock %}
+	
+</head>
+<body>
+	{% include 'nav.html' %}
+
+	{% block content %}
+	{% endblock %}
+
+	<script type="text/javascript">
+		var menu  = document.getElementById('menu');
+		var nav   = document.getElementById('nav');
+		var cross = document.getElementById('cross');
+
+		menu.addEventListener('click', function(e) {
+			nav.classList.toggle('hide-mobile');
+			e.preventDefault();
+		});
+
+		cross.addEventListener('click', function(e) {
+			nav.classList.add('hide-mobile');
+			e.preventDefault();
+		});
+	</script>
+</body>
+</html>
